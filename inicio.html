@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="inicio1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Registrarse</h2>
+            <form action="registro.php" method="post">
+                <input type="text" name="email_or_phone" placeholder="Correo o Teléfono" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+
+        <div class="form">
+            <h2>Iniciar Sesión</h2>
+            <form action="inicio_sesion.php" method="post">
+                <input type="text" name="email_or_phone" placeholder="Correo o Teléfono" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

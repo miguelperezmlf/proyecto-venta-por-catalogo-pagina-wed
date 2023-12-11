@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tu Tienda en Línea</title>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container menu">
+            <a href="#" class="logo">Tu Tienda</a>
+            <input type="checkbox" id="menu">
+            <label for="menu" class="menu-icono">
+                <img src="imagenes/blanco.jpg" alt="Menú">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#" class="popup" data-text="Bienvenido a nuestra tienda virtual, espero que encuentres lo que buscas. Gracias por tu visita">Inicio</a></li>
+                    <li><a href="#" class="popup" data-text="Descubre nuestros servicios especializados en tecnología">Servicios</a></li>
+                    <li><a href="#" class="popup" data-text="Encuentra los mejores productos de tecnología del mercado">Productos</a></li>
+                    <li><a href="#" class="popup" data-text="Miguel Pérez Moreno Tel 829-560-9715 correo dj.miguelo@hotmail.es">Contacto</a></li>
+                </ul>
+                <form action="#" method="GET" id="search-form">
+                    <input type="text" id="search-input" placeholder="Buscar producto...">
+                    <button type="submit">Buscar</button>
+                </form>
+                <script>
+                    // Datos de ejemplo: una lista de productos
+                    const productos = [
+                        {
+                            nombre: "Monitor Philips 22 pulgadas",
+                            descripcion: "Monitor Philips 22 pulgadas",
+                            imagen: "imagenes/8.jpg",
+                            precio: "$4,500",
+                        },
+                        // Agrega más productos a esta lista
+                    ];
+                
+                    // Función para mostrar el producto encontrado
+                    function mostrarProductoEncontrado(producto) {
+                        const productDetails = document.getElementById("product-details");
+                        productDetails.innerHTML = `
+                            <h3>${producto.nombre}</h3>
+                            <img src="${producto.imagen}" alt="${producto.nombre}">
+                            <p>${producto.descripcion}</p>
+                            <p>Precio: ${producto.precio}</p>
+                        `;
+                        // Mostrar el contenedor de resultados
+                        productDetails.style.display = "block";
+                    }
+                
+                    // Evento de envío del formulario
+                    const searchForm = document.getElementById("search-form");
+                    searchForm.addEventListener("submit", function (e) {
+                        e.preventDefault();
+                
+                        const searchInput = document.getElementById("search-input");
+                        const searchTerm = searchInput.value;
+                
+                        const productoEncontrado = productos.find((producto) =>
+                            producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+                        );
+                
+                        if (productoEncontrado) {
+                            // Ocultar otros elementos (por ejemplo, el encabezado y el contenido principal)
+                            document.querySelector("header").style.display = "none";
+                            document.querySelector("main").style.display = "none";
+                            document.querySelector(".popular").style.display = "none";
+                            // Mostrar el producto encontrado
+                            mostrarProductoEncontrado(productoEncontrado);
+                        } else {
+                            // Mostrar un mensaje de "sin resultados"
+                            const productDetails = document.getElementById("product-details");
+                            productDetails.innerHTML = "<p>No se encontraron resultados.</p>";
+                            // Mostrar el contenedor de resultados
+                            productDetails.style.display = "block";
+                        }
+                    });
+                </script>
+                
+            </nav>
+        </div>
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Compra tu <span>Tecnología</span> <br>Informática aquí</h1>
+                <p>
+                    ¡Bienvenido a tu tienda de tecnología en línea!
+                    Aquí podrás encontrar los dispositivos más avanzados y modernos
+                    para satisfacer tus necesidades tecnológicas. Desde teléfonos inteligentes
+                    hasta computadoras portátiles, nuestra tienda tiene todo lo que necesitas
+                    para mantenerte conectado y actualizado en el mundo digital. ¡Explora nuestra
+                    selección y encuentra los dispositivos perfectos para ti!
+                </p>
+                <div class="botones">
+                    <a href="#" class="btn-1">Información</a>
+                    <a href="#" class="btn-1">Tecnología</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección "Tecnología más buscada" -->
+    <section class="popular container">
+        <h2>Tecnología más buscada</h2>
+        <div class="popular-content">
+            <img src="imagenes/1.jpg" alt="">
+            <img src="imagenes/2.jpg" alt="">
+            <img src="imagenes/3.jpg" alt="">
+            <img src="imagenes/4.jpg" alt="">
+            <img src="imagenes/5.jpg" alt="">
+            <img src="imagenes/6.jpg" alt="">
+            <img src="imagenes/7.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- Sección de productos -->
+    <main class="product container">
+        <h2>Todos los productos</h2>
+        <div class="product-content">
+            <!-- Producto 1 -->
+            <div class="product-1">
+                <img src="imagenes/8.jpg" alt="Monitor Philips 22 pulgadas">
+                <div class="product-txt">
+                    <h3>Monitor Philips 22 pulgadas</h3>
+                    <div class="price">
+                        <p>$4,500</p>
+                        <a href="#" class="btn-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="proudct-content">
+                <div class="proudct-1">
+                    <img src="imagenes/8.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>monitor philips 22 pulgas</h3>
+                        <div class="price">
+                            <p>$4,500</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="proudct-1">
+                    <img src="imagenes/10.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>video camara para pc</h3>
+                        <div class="price">
+                            <p>$500</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="proudct-1">
+                    <img src="imagenes/11.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>tableta lenovo</h3>
+                        <div class="price">
+                            <p>$8,900</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="proudct-1">
+                    <img src="imagenes/12.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>lacto samsung</h3>
+                        <div class="price">
+                            <p>$25,500</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="proudct-1">
+                    <img src="imagenes/13.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>targeta garfica AMD </h3>
+                        <div class="price">
+                            <p>$6700</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="proudct-1">
+                    <img src="imagenes/14.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>Abanico de enfriamiento multi color</h3>
+                        <div class="price">
+                            <p>$800</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="proudct-1">
+                    <img src="imagenes/15.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>memoria RAM 16G</h3>
+                        <div class="price">
+                            <p>$4,600</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="proudct-1">
+                    <img src="imagenes/16.jpg" alt="">
+                    <div class="proudct-txt">
+                        <h3>memoria RAM 16G</h3>
+                        <div class="price">
+                            <p>4,600</p>
+                            <a href="#" class="btn-2" >comprar</a>
+    
+                        </div>
+    
+                        <div class="proudct-1">
+                            <img src="imagenes/17.jpg" alt="">
+                            <div class="proudct-txt">
+                                <h3>tecnologia lorem</h3>
+                                <div class="price">
+                                    <p>$500</p>
+                                    <a href="#" class="btn-2" >comprar</a>
+            
+                                </div>
+            
+                            </div>
+                            <div id="product-details" class="product-details">
+                                <!-- Aquí se mostrará el producto encontrado -->
+                            </div>
+            
+                        </div>
+            
+    
+                    </div>
+    
+                </div>
+      
+            </div>
+    
+        </main>
+            <!-- Repite el mismo formato para otros productos -->
+        </div>
+    </main>
+
+    <!-- Sección de suscripción -->
+    <section class="contact container">
+        <div class="contact-container">
+            <h3>Suscríbete a nuestro boletín</h3>
+            <form>
+                <input type="email" placeholder="Escribe tu correo">
+                <input type="submit" class="btn-3" value="Enviar">
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer container">
+        <div class="link">
+            <a href="#" class="logo">Tu Tienda</a>
+        </div>
+        <div class="link">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de contacto -->
+    <div class="container-boton">
+        <a href="https://wa.me/8295609715?text=Quiero%20realizar%20un%20proyecto%20web%20php" target="_blank">
+            <img class="boton" src="icono.png" alt="Contacto por WhatsApp">
+        </a>
+    </div>
+    <div class="container-boton">
+        <a href="https://www.facebook.com/dj.miguelo.80" target="_blank">
+            <img class="boton" src="facebook.png" alt="Página de Facebook">
+        </a>
+    </div>
+
+    <!-- Script para mostrar información de contacto -->
+    <script>
+        const miBoton = document.getElementById('miBoton');
+        miBoton.addEventListener('click', function () {
+            alert('¡Miguel Pérez Moreno | 829-650-9715!');
+        });
+    </script>
+</body>
+</html>

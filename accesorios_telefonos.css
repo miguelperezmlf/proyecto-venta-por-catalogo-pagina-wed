@@ -1,0 +1,62 @@
+/* Estilos para la página "Accesorios para Computadoras" */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1559eb;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.product-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-1 {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: calc(33.33% - 20px);
+}
+
+.product-1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-txt h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.price p {
+  color: #f00;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.btn-2 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f00;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
